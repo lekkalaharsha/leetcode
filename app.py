@@ -1,8 +1,14 @@
-from flask import Flask,render_template
-
+from flask import Flask,render_template,request
+import datetime
 app =Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["POST" , "GET"])
 def home():
+    if request.method == "POST":
+        entry_content=request.form.get("content")
+        print(entry_content, datetime.datetime.today().strftime("%Y-%d"))
     return render_template("home.html")
-app.run()
+
+
+if __name__ == '__main__':
+    app.run()
