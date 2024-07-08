@@ -8,6 +8,7 @@ def home():
         entry_content=request.form.get("content")
         print(entry_content, datetime.datetime.today().strftime("%Y-%d"))
     return render_template("home.html")
+#neew ting chaged
 
 
 if __name__ == '__main__':
